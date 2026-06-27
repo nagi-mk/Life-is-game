@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Life is game</title>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d1b2a">
+</head>
+
+<body>
+<div id="startScreen">
+
+<h1 id="startTitle">
+🌙 Life is Game
+</h1>
+
+<p id="startSub">
+今日も、小さな一歩を積み重ねよう。
+</p>
+
+<button id="startButton"
+onclick="startGame()">
+
+▶ TAP TO START
+</button>
+</div>
+
+<div class="stars">
+
+<div class="star" style="top:10%;left:20%;"></div>
+<div class="star" style="top:15%;left:70%;"></div>
+<div class="star" style="top:25%;left:40%;"></div>
+<div class="star" style="top:35%;left:85%;"></div>
+<div class="star" style="top:50%;left:15%;"></div>
+<div class="star" style="top:60%;left:60%;"></div>
+<div class="star" style="top:70%;left:35%;"></div>
+<div class="star" style="top:80%;left:75%;"></div>
+<div class="star" style="top:90%;left:50%;"></div>
+
+<div class="pixel-star">✧</div>
+
+</div>
+
+
+<h1>🐣 strengthen me</h1>
+<p id="quote"></p>
+<audio id="expSound" src="exp.mp3"></audio>
+<audio id="coinSound" src="coin.mp3"></audio>
+<audio id="questSound" src="quest.mp3"></audio>
+<audio id="achievementSound" src="achievement.mp3"></audio>
+<audio id="levelSound" src="levelup.mp3"></audio>
+<audio id="bgm" src="bgm.mp3" loop></audio>
+
+<div id="questClear">
+  <div id="titleClear">
+    <div id="titleText"></div>
+  </div>
+  <div id="questText"></div>
+</div>
+
+<div id="levelUp">
+  <div id="levelText"></div>
+</div>
+
+<div id="message"></div>
+<img src="landscape.png" id="hero">
+<p id="title">人生初心者🔰</p>
+<div class="tabs">
+
+<button onclick="showTab('status')">
+ステータス
+</button>
+<button onclick="showTab('stats')">
+能力値
+</button>
+<button onclick="showTab('quest')">
+クエスト
+</button>
+
+<button onclick="showTab('achievement')">
+実績
+</button>
+
+
+</div>
+<div id="status" class="tab card">
+
+<h2>⭐ レベル</h2>
+
+<p id="level">Lv.1</p>
+
+<p id="exp">EXP 0 / 100</p>
+<div id="expBar">
+<div id="expFill"></div>
+</div>
+<button onclick="gainExp(10)">
+経験値 +10
+
+
+</button>
+
+<h3>🔥 今日の進捗</h3>
+
+<div id="dayBar">
+<div id="dayFill"></div>
+</div>
+
+<p id="dayPercent">0%</p>
+
+<h2>💰 所持金</h2>
+
+<p id="money">0円</p>
+
+<button onclick="addMoney()">
+100円追加
+</button>
+<button onclick="removeMoney()">
+100円消費
+</button>
+</div>
+
+<div id="quest" class="tab card">
+
+<h2>🎯 クエスト</h2>
+<h2>☀️ デイリークエスト</h2>
+
+<ul id="dailyList"></ul>
+<input id="questInput" placeholder="クエスト名">
+
+<button onclick="addQuest()">
+クエスト追加
+</button>
+
+<ul id="questList"></ul>
+
+</div>
+<div id="stats" class="tab card">
+
+<h2>📊 能力値</h2>
+
+<p>📚 学力 : <span id="study">0</span></p>
+
+<p>💪 体力 : <span id="power">0</span></p>
+
+<p>🗣️ 社交 : <span id="social">0</span></p>
+
+<p>🎨 芸術 : <span id="art">0</span></p>
+
+<p>✨ 徳 : <span id="virtue">0</span></p>
+
+<button onclick="addStat('study')">
+学力+1
+</button>
+
+<button onclick="addStat('power')">
+体力+1
+</button>
+
+<button onclick="addStat('social')">
+社交+1
+</button>
+
+<button onclick="addStat('art')">
+芸術+1
+</button>
+
+<button onclick="addStat('virtue')">
+徳+1
+</button>
+
+</div>
+<div id="achievement" class="tab card">
+
+<h2>🏆 実績</h2>
+
+<input id="achievementInput" placeholder="実績名">
+
+<button onclick="addAchievement()">
+実績追加
+</button>
+
+<ul id="achievementList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
